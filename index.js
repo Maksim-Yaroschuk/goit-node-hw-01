@@ -22,8 +22,8 @@ async function invokeAction({ action, id, name, email, phone } = argv) {
       break;
 
     case "get":
-      const getContacts = await db.listContacts();
-      console.table(getContacts.find((item) => item.id === id));
+      const getContacts = await db.getContactById(id);
+      console.table(getContacts);
       break;
 
     case "remove":
